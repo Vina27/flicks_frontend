@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./components/Header"
 import MovieContainer from "./components/MovieContainer"
 import MovieShowContainer from "./components/MovieShowContainer"
+import MovieCard from "./components/MovieCard"
 
 class App extends Component {
   render () {
@@ -11,6 +12,7 @@ class App extends Component {
       <Header/>
       <MovieContainer/>
       <MovieShowContainer/>
+      <MovieCard/>
     </div>
   )};
 }
