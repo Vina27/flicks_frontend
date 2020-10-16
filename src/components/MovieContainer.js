@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieCard from "./MovieCard"
+
 class MovieContainer extends Component {
     render() {
         return (

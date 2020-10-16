@@ -19,16 +19,18 @@ class App extends Component {
       this.setState({
         movies: moviesArr
       })
+      console.log(moviesArr)
     })
   }
 
 
   render () {
-    //we care checking if state is filled with movies  
-    console.log(this.state.movies)
+    //we are checking if state is filled with movies  
+    //console.log(this.state.movies)
   return (
     <div className="App">
-      <Header/>
+      <Header />
+
       <MovieContainer/>
       <MovieShowContainer/>
       <MovieCard/>
