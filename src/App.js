@@ -3,7 +3,7 @@ import './App.css';
 import Header from "./components/Header"
 import MovieContainer from "./components/MovieContainer"
 import MovieShowContainer from "./components/MovieShowContainer"
-import MovieCard from "./components/MovieCard"
+
 
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
 
@@ -27,31 +27,16 @@ class App extends Component {
 
 
   render () {
+    
     //we are checking if state is filled with movies  
-    //console.log(this.state.movies)
+    console.log(this.state.movies)
   return (
     <div className="App">
       <Header />
-
-      <MovieContainer movieArr={this.state.movies}/>
-      
-      <MovieShowContainer/>
-      <MovieCard/>
+      <MovieContainer movieArr={this.state.movies} />
+      <MovieShowContainer />
+ 
     
-    <main>
-
-      <Switch>
-        {/* SPLASH/LANDING PAGE AT THE TOP */}
-
-        <Route path="/" exact component={MovieContainer} />
-
-      
-  
-        {/* 404 PAGE AT THE BOTTOM */}
-       {/*<Route component={NotFound} />*/}
-      </Switch>
-
-    </main>
   </div>
   )};
 }

@@ -6,7 +6,7 @@ class MovieShowContainer extends Component {
     render() {
         return (
             <div>
-                <MovieCard />
+               
                 <ReviewContainer />
               <p>This is ShowContainer</p>  
             </div>

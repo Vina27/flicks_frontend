@@ -3,20 +3,26 @@ import MovieCard from "./MovieCard"
 
 class MovieContainer extends Component {
 
-    renderMovieCards=() => {
-        this.props.movieArr.map((movieObj) =>{
-        
-        return <MovieCard movieObj={movieObj}/>
-      })
-    }
+    // renderMovieCards = () => {
+    //     this.props.movieArr.map((movieObj) => {
+    //     console.log(movieObj)
+    //     return <MovieCard movieObj={movieObj}/>
+
+    //   })
+    // }
 
     render() {
-        console.log(this.props.movieArr)
+        let movieCards = this.props.movieArr ? this.props.movieArr.map((movieObj) => {
+           
+            return <MovieCard movieObj={movieObj}/>
+
+        }) : null 
+
+        //console.log(this.props.movieArr)
         return (
             <div>
                
-
-                {this.renderMovieCards()}
+               {movieCards}
 
             </div>
         );
