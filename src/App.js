@@ -33,11 +33,26 @@ class App extends Component {
   return (
     <div className="App">
       <Header />
-      <MovieContainer movieArr={this.state.movies} />
-      <MovieShowContainer />
- 
+     
+    <Switch>
+      {/* SPLASH/LANDING PAGE AT THE TOP */}
+      <Route path="/" exact render={() =>  <MovieContainer movieArr={this.state.movies}/>} />
+      <Route path="/:id" render={() => <MovieShowContainer movieArr={this.state.movies}/>} />
+
+      {/* 404 PAGE AT THE BOTTOM */}
+      {/*<Route component={NotFound} />*/}
+    </Switch>
+
+
     
-  </div>
+
+
+
+
+
+
+
+    </div>
   )};
 }
 

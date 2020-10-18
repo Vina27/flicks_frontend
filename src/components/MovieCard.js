@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Divider, Image } from 'semantic-ui-react';
+import { Divider, Image, Grid } from 'semantic-ui-react';
 
 
 class MovieCard extends Component {
@@ -9,10 +9,14 @@ class MovieCard extends Component {
         return (
             <div>
 
-               <p>This is MovieCard</p> 
-               
+              
+               <Grid.Row columns={4}>
+                   <Grid.Column>
                <Image src={this.props.movieObj.img_url} size='medium' />
-
+               </Grid.Column>
+               </Grid.Row>
+               
+               
             </div>
         );
     }
