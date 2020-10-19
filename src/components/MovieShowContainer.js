@@ -3,6 +3,7 @@ import MovieCard from "./MovieCard"
 import ReviewContainer from "./ReviewContainer"
 import { withRouter } from 'react-router-dom'
 
+//All crud review functions go in here 
 
 class MovieShowContainer extends Component {
     //we need to do componentDidMount and then render the image card 
@@ -21,16 +22,20 @@ class MovieShowContainer extends Component {
                 movie: movieObj
             })
         })
-
-
     }
 
+    createReview = (newReview) => {
+        //fetch reviews 
+        //body send review + user id and movie id
+    }
+    
     render() {
-      console.log(this.state.movie)
+
+      //console.log(this.state.movie)
         return (
             <div>
                <MovieCard movieObj={this.state.movie}/>
-                <ReviewContainer />
+                <ReviewContainer reviews={this.state.movie.reviews} createReview={this.createReview}/>
               <p>This is ShowContainer</p>  
             </div>
         );

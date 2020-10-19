@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 
 class ReviewCard extends Component {
     render() {
+        console.log(this.props.review.review)
         return (
             <div>
-                <p>This is ReviewCard</p>
+                <h3>Reviews</h3>
+                <li>{this.props.review.review}</li>
+
             </div>
         );
     }

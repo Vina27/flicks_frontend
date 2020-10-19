@@ -4,11 +4,13 @@ import ReviewForm from "./ReviewForm"
 
 class ReviewContainer extends Component {
     render() {
+        console.log(this.props)
+        let reviewCard = this.props.reviews ? this.props.reviews.map(review => <ReviewCard review={review} />) : null
         return (
             <div>
                 <p>This is ReviewContainer</p>
-                <ReviewCard />
-                <ReviewForm />
+                {reviewCard}
+                <ReviewForm createReview={this.props.createReview} />
             </div>
         );
     }
