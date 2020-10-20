@@ -14,7 +14,6 @@ class MovieShowContainer extends Component {
         //review: "", 
         user_id: 1, 
         //movie_id: "", 
-
     }
 
     componentDidMount() {
@@ -56,13 +55,26 @@ class MovieShowContainer extends Component {
         //    console.log(this.setState)
            this.setState ({
                movie: updatedMovie
-
-           })
-           //sending up response 
-           //this.props.createReview(newReview)
+            })
          })
      }
     
+     deleteReview = (reviewObj) => {
+        //console.log(reviewObj)
+        fetch(`http://localhost:3000/reviews/${reviewObj.id}`, {
+            method: "Delete", 
+            
+        })
+        .then(resp => resp.json())
+        .then(deletedReview => {
+            console.log(deletedReview)
+        let updatedReviews = this.state.movie.reviews.filter (review => review.id !== deletedReview.review.id)
+        let updatedMovie = {...this.state.movie, reviews: updatedReviews}
+            this.setState({
+                movie: updatedMovie
+            })
+        })
+     }
 
     render() {
 
@@ -70,7 +82,7 @@ class MovieShowContainer extends Component {
         return (
             <div>
                <MovieCard movieObj={this.state.movie}/>
-                <ReviewContainer reviews={this.state.movie.reviews} createReview={this.createReview}/>
+                <ReviewContainer reviews={this.state.movie.reviews} createReview={this.createReview} deleteReview={this.deleteReview}/>
               <p>This is ShowContainer</p>  
             </div>
         );

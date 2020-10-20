@@ -1,14 +1,42 @@
 import React, { Component } from 'react';
+import { Button, Comment, TableHeader  } from 'semantic-ui-react'
 
 class ReviewCard extends Component {
-    render() {
-        console.log(this.props.review.review)
-        return (
-            <div>
-                
-                <li>{this.props.review.review}</li>
 
-            </div>
+    handleDeleteReview = () => {
+        //console.log(this.props.review.review)
+        this.props.deleteReview(this.props.review)
+    }
+
+
+
+
+
+    render() {
+        //console.log(this.props.review.review)
+        //console.log(this.props)
+        return (
+           
+            <Comment>
+              <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' />
+              <Comment.Content>
+                <Comment.Author>Maysoon</Comment.Author>
+                
+                <Comment.Text>
+                  
+                  <p>
+                   {this.props.review.review}
+                  </p>
+                </Comment.Text>
+                <Button basic color='red' onClick={this.handleDeleteReview}>
+                    Delete
+                </Button>
+
+
+              
+              </Comment.Content>
+            </Comment>
+           
         );
     }
 }
