@@ -9,6 +9,7 @@ class ReviewContainer extends Component {
         return (
             <div>
                 <p>This is ReviewContainer</p>
+                <h2>Reviews</h2>
                 {reviewCard}
                 <ReviewForm createReview={this.props.createReview} />
             </div>

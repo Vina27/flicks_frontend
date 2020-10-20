@@ -9,26 +9,31 @@ class ReviewForm extends Component {
     }
 
     handleInputChange = (evt) => {
-        console.log(evt.target)
+        //console.log(evt.target)
         this.setState({
             [evt.target.name] : evt.target.value
         })
     }
 
-    // handleSubmit = (evt) => { 
-    //     evt.preventDefault()
-    //     fetch (`http://localhost:3000/reviews`)
-
+    handleSubmit = (evt) => { 
+        evt.preventDefault()
+        //console.log("hi")
+        this.props.createReview(this.state.review)
+    //     fetch(`http://localhost:3000/reviews`, {
+    //         method: "Post", 
     //         headers: {
     //             "Content-Type": "Application/json"
     //         }, 
-
-    // }
+    //         body: JSON.stringify({
+    //             review: this.state.review
+    //         })
+    // })
+}
 
 
 
     render() {
-        console.log(this.props)
+        //console.log("the review", this.state.review)
         return (
             <div>
                 <Form onSubmit={this.handleSubmit}>

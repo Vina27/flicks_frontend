@@ -5,7 +5,7 @@ class ReviewCard extends Component {
         console.log(this.props.review.review)
         return (
             <div>
-                <h3>Reviews</h3>
+                
                 <li>{this.props.review.review}</li>
 
             </div>
