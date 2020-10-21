@@ -19,7 +19,10 @@ class MovieContainer extends Component {
         console.log(this.props.movieArr)
           return (
             <div className="Movie-Show-Cont">
+              <h2 className="Subtitle">Please Click On A Movie To Review </h2>
+                
                 <Grid>
+                
                 {this.renderMovieCards()}
                 </Grid>
             </div>
