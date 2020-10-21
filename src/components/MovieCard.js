@@ -14,8 +14,11 @@ class MovieCard extends Component {
                <Grid.Row columns={3}>
                    <Grid.Column>
                    
-
+                <p> {this.props.movieObj.name} </p>
+                <p>{/*this.props.movieObj.genre*/}</p>
                <Image src={this.props.movieObj.img_url} size='medium' />
+                <p>{this.props.movieObj.summary}</p> 
+
                </Grid.Column>
                </Grid.Row>
                

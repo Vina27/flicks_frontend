@@ -21,8 +21,8 @@ class ReviewForm extends Component {
         evt.preventDefault()
         //console.log("hi")
       
-        if (this.props.clicked) {
-            return this.props.handleUpdatedReview(this.state.review)
+        if (this.props.currentReview) {
+            return this.props.handleUpdatedReview(this.state.review, this.props.currentReview)
             
         } else {
             return this.props.createReview(this.state.review)
@@ -34,14 +34,14 @@ class ReviewForm extends Component {
 
     render() {
         //console.log("the review", this.state.review)
-        console.log(this.props.handleUpdatedReview)
-        console.log(this.props.currentReview)
+        //console.log(this.props.handleUpdatedReview)
+        //console.log(this.props.currentReview)
         return (
             <div className="Reviews">
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group>
                         <Form.Input
-                            placeholder={this.props.currentReview.review}
+                            placeholder= "Leave your comment"
                             name='review'
                             value={this.state.review }
                             onChange={this.handleInputChange}

@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { Button, Comment, TableHeader  } from 'semantic-ui-react'
+import ReviewForm from "./ReviewForm" 
 
 class ReviewCard extends Component {
+
+  state = {
+    clicked: false, 
+  }
 
     handleDeleteReview = () => {
         //console.log(this.props.review.review)
@@ -10,14 +15,17 @@ class ReviewCard extends Component {
 
     handleUpdateReview = () => {
       console.log(this.props.review)
-      this.props.currentReviewFunc(this.props.review)
+    
+        this.setState ({
+          clicked: !this.state.clicked 
+        })
     }
-
 
 
     render() {
         //console.log(this.props.review.review)
         //console.log(this.props)
+        console.log(this.state.clicked)
         return (
            
             <Comment>
@@ -31,6 +39,7 @@ class ReviewCard extends Component {
                    {this.props.review.review}
                   </p>
                 </Comment.Text>
+                {this.state.clicked ? <ReviewForm handleUpdatedReview={this.props.handleUpdatedReview} currentReview={this.props.review} /> : null }
                 <Button basic color='red' onClick={this.handleDeleteReview}>
                     Delete
                 </Button>

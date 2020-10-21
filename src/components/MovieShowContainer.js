@@ -11,8 +11,6 @@ class MovieShowContainer extends Component {
     //we need to do componentDidMount and then render the image card 
     state = {
         movie: {}, 
-        currentReview: "", 
-        clicked: false,
         user_id: 1, 
         //movie_id: "", 
     }
@@ -61,31 +59,35 @@ class MovieShowContainer extends Component {
          })
      }
 
-     handleUpdatedReview = (updatedReviewObj) => {
+     handleUpdatedReview = (updatedReviewObj, currentReview) => {
          console.log(updatedReviewObj)
-        fetch(`http://localhost:3000/reviews/${this.state.currentReview.review.id}`, {
+        fetch(`http://localhost:3000/reviews/${currentReview.id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "Application/json"
             },
             body: JSON.stringify({
-                reviews: updatedReviewObj
+                review: updatedReviewObj
             })
         })
             .then(res => res.json())
             .then( updatedReview => { 
                 console.log(updatedReview)
-                
+                let updatedReviews = this.state.movie.reviews.map (review => {
+                    if (review.id === updatedReview.id) {
+                        return updatedReview 
+                    }else {
+                        return review 
+                    }
+                }) 
+                let updatedMovie =  {...this.state.movie, reviews:updatedReviews}
+                    this.setState ({
+                        movie: updatedMovie 
+                    })
             })
     }
      
-    currentReviewFunc = (reviewObj) => {
-        console.log(reviewObj)
-        this.setState ({
-            currentReview: reviewObj, 
-            clicked: !this.state.clicked
-        })
-    }
+    
 
      deleteReview = (reviewObj) => {
         //console.log(reviewObj)
@@ -108,11 +110,15 @@ class MovieShowContainer extends Component {
     render() {
 
       //console.log(this.state.movie)
-      console.log(this.state.clicked)
+    
         return (
             <div>
                <MovieCard movieObj={this.state.movie} />
-                <ReviewContainer reviews={this.state.movie.reviews} createReview={this.createReview} deleteReview={this.deleteReview} currentReviewFunc={this.currentReviewFunc} currentReview={this.state.currentReview} clicked={this.state.clicked} handleUpdatedReview={this.handleUpdatedReview}/>
+                <ReviewContainer 
+                reviews={this.state.movie.reviews} 
+                createReview={this.createReview} 
+                deleteReview={this.deleteReview}   
+                handleUpdatedReview={this.handleUpdatedReview}/>
                 {/* <button onClick={ this.handleUpdatedReview } >
                     reviews: {reviews}
                 </button>  */}

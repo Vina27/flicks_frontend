@@ -7,7 +7,7 @@ import { Button, Comment  } from 'semantic-ui-react'
 class ReviewContainer extends Component {
     render() {
         console.log(this.props)
-        let reviewCard = this.props.reviews ? this.props.reviews.map(review => <ReviewCard review={review} currentReviewFunc={this.props.currentReviewFunc} deleteReview={this.props.deleteReview}/>) : null
+        let reviewCard = this.props.reviews ? this.props.reviews.map(review => <ReviewCard review={review} deleteReview={this.props.deleteReview} handleUpdatedReview={this.props.handleUpdatedReview}/>) : null
         return (
             <div>
                 <p>This is ReviewContainer</p>
@@ -15,7 +15,7 @@ class ReviewContainer extends Component {
                 <Comment.Group>
                 {reviewCard}
             
-                <ReviewForm createReview={this.props.createReview} currentReview={this.props.currentReview} clicked={this.props.clicked} handleUpdatedReview={this.props.handleUpdatedReview}/>
+                <ReviewForm createReview={this.props.createReview} />
                 </Comment.Group>
             </div>
         );
