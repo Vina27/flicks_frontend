@@ -8,7 +8,10 @@ class ReviewCard extends Component {
         this.props.deleteReview(this.props.review)
     }
 
-
+    handleUpdateReview = () => {
+      console.log(this.props.review)
+      this.props.currentReviewFunc(this.props.review)
+    }
 
 
 
@@ -31,9 +34,9 @@ class ReviewCard extends Component {
                 <Button basic color='red' onClick={this.handleDeleteReview}>
                     Delete
                 </Button>
-
-
-              
+                <Button basic color='blue' onClick={this.handleUpdateReview}>
+                    Update Review
+                </Button> 
               </Comment.Content>
             </Comment>
            

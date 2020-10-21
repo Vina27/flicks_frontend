@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: white; 
 }
 
 .App-logo {
@@ -15,13 +16,14 @@
 /* Original*/ 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+ 
 }
 
 /* I added this one*/
@@ -29,17 +31,48 @@
   background-color: #EC4149;
   height: 150px;
   padding: 20px;
-  color: white;
+  color: white;  
 }
 
 /* I added .app title*/ 
 .App-title {
   font-size: 1.5em;
-}
+} 
 
 .App-link {
   color: #61dafb;
 }
+
+/*images */
+
+.Movie-Posters {
+  
+  display: flex; 
+  flex-wrap: wrap; 
+  flex-direction: row; 
+  padding: 30px;
+  
+  /*justify-content: center; */
+}
+
+/*.Reviews {
+  width: 40%;
+  height: 100px;
+  padding: 10px;
+  background-color: maroon;
+  
+}*/
+
+
+.Movie-Show-Cont {
+  margin-top: 15px; 
+  display: flex; 
+  justify-content: center; 
+
+ /* padding-left: 5%; */
+}
+
+
 
 @keyframes App-logo-spin {
   from {

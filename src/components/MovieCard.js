@@ -7,11 +7,14 @@ class MovieCard extends Component {
         
       console.log(this.props.movieObj)
         return (
-            <div>
-
+            <div className="Movie-Posters">
+       
+     
               
-               <Grid.Row columns={4}>
+               <Grid.Row columns={3}>
                    <Grid.Column>
+                   
+
                <Image src={this.props.movieObj.img_url} size='medium' />
                </Grid.Column>
                </Grid.Row>

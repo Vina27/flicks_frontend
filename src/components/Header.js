@@ -7,8 +7,9 @@ class Header extends Component {
           
 
             <div>
-               <p>This is the header</p> 
-               {/*<h1 className="App-title">Flicks Movie Reviews</h1>*/}
+               <h1 className="App-header">Flicks Movie Reviews <br></br> <h2>Please Click on a Movie to Review </h2></h1>
+           
+               {/*<h2>Please Click on a Movie to Review</h2>*/}
             </div>
         );
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MovieCard from "./MovieCard"
 import { Image, Grid } from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
-
+//import { Grid, Image } from 'semantic-ui-react'
 class MovieContainer extends Component {
 
     renderMovieCards = () => {
@@ -18,7 +18,7 @@ class MovieContainer extends Component {
     render() {
         console.log(this.props.movieArr)
           return (
-            <div>
+            <div className="Movie-Show-Cont">
                 <Grid>
                 {this.renderMovieCards()}
                 </Grid>
