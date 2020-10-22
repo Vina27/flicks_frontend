@@ -111,9 +111,15 @@ class MovieShowContainer extends Component {
 
       //console.log(this.state.movie)
     
-        return (
+        return (    
+            
             <div>
+
                <MovieCard movieObj={this.state.movie} />
+               
+              
+              
+
                 <ReviewContainer 
                 reviews={this.state.movie.reviews} 
                 createReview={this.createReview} 
@@ -122,7 +128,7 @@ class MovieShowContainer extends Component {
                 {/* <button onClick={ this.handleUpdatedReview } >
                     reviews: {reviews}
                 </button>  */}
-              <p>This is ShowContainer</p>  
+              <p></p>  
             </div>
         );
     }

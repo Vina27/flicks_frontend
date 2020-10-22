@@ -14,7 +14,7 @@ class ReviewCard extends Component {
     }
 
     handleUpdateReview = () => {
-      console.log(this.props.review)
+      //console.log(this.props.review)
     
         this.setState ({
           clicked: !this.state.clicked 
@@ -25,11 +25,11 @@ class ReviewCard extends Component {
     render() {
         //console.log(this.props.review.review)
         //console.log(this.props)
-        console.log(this.state.clicked)
+        //console.log(this.state.clicked)
         return (
            
-            <Comment>
-              <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' />
+            <Comment className="Comment">
+              <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/rachel.png' />
               <Comment.Content>
                 <Comment.Author>Maysoon</Comment.Author>
                 

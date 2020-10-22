@@ -57,6 +57,40 @@
   /*justify-content: center; */
 }
 
+
+.Summary {
+  position: relative;
+  top: -400px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+  /*border: 3px solid red;*/
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 20px; 
+}
+
+
+.Review-Cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  position: relative;
+  top: -600px; 
+  float: right;
+  margin-right: 5%; 
+
+}
+
+.Submitbtn {
+  position: relative;
+  top: 20px;
+  
+
+}
 /*.Reviews {
   width: 40%;
   height: 100px;
@@ -71,13 +105,13 @@
 }
 
 
-.Movie-Show-Cont {
- 
-  height: 100vh; 
-  margin-top: 10px; 
+.Movie-Cont {
+  
+  height: 70vh; 
   display: flex; 
   flex-wrap: wrap; 
-  justify-content: center; 
+  justify-content: center;
+ 
  
 
  /* padding-left: 5%; */

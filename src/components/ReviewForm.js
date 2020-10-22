@@ -10,7 +10,7 @@ class ReviewForm extends Component {
 
     handleInputChange = (evt) => {
         
-        console.log(evt.target)
+        //console.log(evt.target)
         this.setState({
             [evt.target.name] : evt.target.value
         })
@@ -39,7 +39,7 @@ class ReviewForm extends Component {
         return (
             <div className="Reviews">
                 <Form onSubmit={this.handleSubmit}>
-                    <Form.Group>
+                    <Form.Group className="Submitbtn" >
                         <Form.Input
                             placeholder= "Leave your comment"
                             name='review'

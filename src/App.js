@@ -5,6 +5,7 @@ import MovieContainer from "./components/MovieContainer"
 import MovieShowContainer from "./components/MovieShowContainer"
 
 
+
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
 
 class App extends Component {
@@ -21,7 +22,7 @@ class App extends Component {
       this.setState({
         movies: moviesArr
       })
-      console.log(moviesArr)
+      //console.log(moviesArr)
     })
   }
 
@@ -29,13 +30,22 @@ class App extends Component {
   render () {
     
     //we are checking if state is filled with movies  
-    console.log(this.state.movies)
+    //console.log(this.state.movies)
   return (
     <div className="App">
       <Header />
+       {/* <aside className="sidebar">
+          <ul>
+            <li>
+              <Link to=>Home</Link>
+            </li>
+          </ul>
+
+    </aside>*/}
      
     <Switch>
       {/* SPLASH/LANDING PAGE AT THE TOP */}
+   
       <Route path="/" exact render={() =>  <MovieContainer movieArr={this.state.movies}/>} />
       <Route path="/:id" render={() => <MovieShowContainer movieArr={this.state.movies}/>} />
 
